@@ -9,14 +9,13 @@ use Carbon\Carbon;
 
 class Parser
 {
-	private string $url;
 	private string $type = 's';
 	private int $week;
 	private int $tries = 3;
 	private int $sleep = 5;
 	public array $weekDates;
 	public array $weekHolidays;
-	private string $graphql = 'https://tjjkdyimqrb7jjnc6m5rpefjtu.appsync-api.eu-west-1.amazonaws.com/graphql';
+	private string $url = 'https://tjjkdyimqrb7jjnc6m5rpefjtu.appsync-api.eu-west-1.amazonaws.com/graphql';
 
 	public function __construct(array $arguments)
 	{
@@ -76,7 +75,7 @@ class Parser
 		$client = new Client();
 
 		try {
-			$response = $client->request('POST', $this->graphql, [
+			$response = $client->request('POST', $this->url, [
 				'body' => json_encode($this->params),
 				'headers' => [
 					':authority' => 'tjjkdyimqrb7jjnc6m5rpefjtu.appsync-api.eu-west-1.amazonaws.com',

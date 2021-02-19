@@ -1,6 +1,7 @@
 {
     "require": {
         "guzzlehttp/guzzle": "^7.2",
-        "nesbot/carbon": "^2.45"
+        "nesbot/carbon": "^2.45",
+        "simplehtmldom/simplehtmldom": "2.0-rc2"
     }
 }
